@@ -11,18 +11,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.2.0/boot.js"></script>
 </head>
 <body>
-  
+  <button type="button" onclick="counter++; countDisplay();">증가</button>
+  <span id="counter-display">0</span>
   <script>
-    describe('hello world', () => { // 테스트 스윗: 테스트 유닛들의 모음
+    var counter = 0;
 
-      it('true is true', () => { // 테스트 유닛: 테스트 단위 (기능)
-
-        expect(true).toBe(true); // 매쳐: 검증자
-
-      });
-
-    });  
-    
+    function countDisplay() {
+      var el = document.getElementById('counter-display');
+      el.innerHTML = counter;
+    }
     
   </script>
 </body>
