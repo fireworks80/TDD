@@ -11,29 +11,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.2.0/boot.js"></script>
 </head>
 <body>
-  <button type="button" onclick="counter++; countDisplay();">증가</button>
-  <span id="counter-display">0</span>
-  <script>
-    var counter = 0;
-
-    function countDisplay() {
-      var el = document.getElementById('counter-display');
-      el.innerHTML = counter;
-    }
-    // 문제점
-    // 1. 관심사의 미분리
-    //   - 단일 책임원칙 위반 (버튼 카운터 증가, display 함수 두가지 일을 한다)
-    // 2. 전역변수의 충돌
-    //   - var counter = 0 전역변수
-    // 3. 재사용의 어려움
-    //   - var el = document.getElementById('counter-display')
-    //     id가 counter-display인 요소가 있어야만 가능
-    //     확장에는 열려 있고 변경에는 닫혀있어야 한다.
-    //     함수가 쉽게 변경되면 안되고 기능 확장시 새로운 함수가 아니라 기존 함수를 확장한다.
-
-    // 모듈 생성 원칙
-    // 1. 단일 책임 원칙에 따라 모듈은 한 가지 역할만 한다.
-    // 2. 모듈 자신이 사용할 객체가 있다면 의존성 주입 형태로 제공한다.
-  </script>
+  
+  <script src="/clickCounter/clickCounter.js"></script>
+  <script src="/clickCounter/clickCounter.spec.js"></script>
 </body>
 </html>
